@@ -24,8 +24,8 @@ const Footer = () => {
             </div>
             
             {/* Page Views Badge */}
-            <a href="https://hits.seeyoufarm.com" target="_blank" rel="noopener noreferrer" className="mt-1 hover:opacity-80 transition-opacity">
-              <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fraghavtiwari-portfolio.vercel.app&count_bg=%237C3AED&title_bg=%2311111d&icon=&icon_color=%23E7E7E7&title=Total+Views&edge_flat=true" alt="Portfolio Views" />
+            <a href="https://github.com/ryo-ma/github-profile-views-counter" target="_blank" rel="noopener noreferrer" className="mt-1 hover:opacity-80 transition-opacity">
+              <img src="https://komarev.com/ghpvc/?username=raghavtiwari-portfolio-2026&color=7C3AED&style=flat-square&label=PROFILE+VIEWS" alt="Portfolio Views" />
             </a>
           </motion.div>
 
