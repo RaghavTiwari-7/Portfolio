@@ -22,11 +22,6 @@ const Footer = () => {
                 &copy; {new Date().getFullYear()} {personalInfo.name}. All rights reserved.
               </p>
             </div>
-            
-            {/* Page Views Badge */}
-            <a href="https://github.com/ryo-ma/github-profile-views-counter" target="_blank" rel="noopener noreferrer" className="mt-1 hover:opacity-80 transition-opacity">
-              <img src="https://komarev.com/ghpvc/?username=raghavtiwari-portfolio-2026&color=7C3AED&style=flat-square&label=PROFILE+VIEWS" alt="Portfolio Views" />
-            </a>
           </motion.div>
 
           <motion.div
