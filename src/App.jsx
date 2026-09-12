@@ -12,11 +12,13 @@ import Resume from './components/Resume'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
 import CursorGlow from './components/CursorGlow'
+import LikeButton from './components/LikeButton'
 
 function App() {
   return (
-    <div className="min-h-screen bg-dark-bg relative">
+    <div className="bg-[#04040a] min-h-screen text-slate-200 font-sans selection:bg-accent/30 selection:text-accent-light relative">
       <CursorGlow />
+      <LikeButton />
       <div className="fixed inset-0 grid-bg pointer-events-none z-0" />
       <Navbar />
       <main className="relative z-10">

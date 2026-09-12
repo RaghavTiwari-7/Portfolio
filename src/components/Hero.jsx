@@ -546,13 +546,13 @@ const Hero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.4 }}
-              className="flex flex-wrap gap-4 mb-8"
+              className="flex flex-col sm:flex-row flex-wrap gap-4 mb-8"
             >
               <motion.button
                 onClick={() => scrollTo('projects')}
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                className="px-6 py-3 bg-accent text-white font-medium rounded-lg hover:bg-accent-light transition-colors duration-300 shadow-[0_0_20px_rgba(124,58,237,0.3)]"
+                className="w-full sm:w-auto px-6 py-3 bg-accent text-white font-medium rounded-lg hover:bg-accent-light transition-colors duration-300 shadow-[0_0_20px_rgba(124,58,237,0.3)] text-center"
               >
                 View My Work
               </motion.button>
@@ -560,7 +560,7 @@ const Hero = () => {
                 href="#"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                className="px-6 py-3 bg-dark-card border border-dark-border text-slate-300 font-medium rounded-lg hover:border-accent/50 hover:text-white transition-all duration-300"
+                className="w-full sm:w-auto px-6 py-3 bg-dark-card border border-dark-border text-slate-300 font-medium rounded-lg hover:border-accent/50 hover:text-white transition-all duration-300 text-center"
               >
                 Download Resume
               </motion.a>
@@ -570,22 +570,24 @@ const Hero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.5 }}
-              className="flex items-center gap-4"
+              className="flex flex-wrap items-center gap-4 sm:gap-4"
             >
-              <a href={socialLinks.github} target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-accent transition-colors duration-300" title="GitHub">
-                <FaGithub size={22} />
-              </a>
-              <a href={socialLinks.linkedin} target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-accent transition-colors duration-300" title="LinkedIn">
-                <FaLinkedin size={22} />
-              </a>
-              <a href={socialLinks.leetcode} target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-amber-400 transition-colors duration-300" title="LeetCode">
-                <SiLeetcode size={20} />
-              </a>
-              <a href={socialLinks.email} className="text-slate-400 hover:text-accent transition-colors duration-300" title="Email">
-                <FaEnvelope size={22} />
-              </a>
-              <span className="text-slate-600">|</span>
-              <span className="text-slate-500 text-sm font-mono">{personalInfo.email}</span>
+              <div className="flex items-center gap-4">
+                <a href={socialLinks.github} target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-accent transition-colors duration-300" title="GitHub">
+                  <FaGithub size={22} />
+                </a>
+                <a href={socialLinks.linkedin} target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-accent transition-colors duration-300" title="LinkedIn">
+                  <FaLinkedin size={22} />
+                </a>
+                <a href={socialLinks.leetcode} target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-amber-400 transition-colors duration-300" title="LeetCode">
+                  <SiLeetcode size={20} />
+                </a>
+                <a href={socialLinks.email} className="text-slate-400 hover:text-accent transition-colors duration-300" title="Email">
+                  <FaEnvelope size={22} />
+                </a>
+              </div>
+              <span className="hidden sm:block text-slate-600">|</span>
+              <span className="text-slate-500 text-sm font-mono truncate w-full sm:w-auto">{personalInfo.email}</span>
             </motion.div>
           </div>
 
