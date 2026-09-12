@@ -1,4 +1,6 @@
-import { createClient } from '@vercel/kv';
+import Redis from 'ioredis';
+
+let redis = null;
 
 export default async function handler(req, res) {
   // CORS headers for local testing
@@ -10,22 +12,23 @@ export default async function handler(req, res) {
   }
 
   try {
-    const url = process.env.KV_REST_API_URL || process.env.UPSTASH_REDIS_REST_URL;
-    const token = process.env.KV_REST_API_TOKEN || process.env.UPSTASH_REDIS_REST_TOKEN;
+    const redisUrl = process.env.REDIS_URL || process.env.KV_URL;
 
-    if (!url || !token) {
-      return res.status(500).json({ error: 'Database environment variables are missing in Vercel' });
+    if (!redisUrl) {
+      return res.status(500).json({ error: 'REDIS_URL environment variable is missing' });
     }
 
-    const db = createClient({ url, token });
+    if (!redis) {
+      redis = new Redis(redisUrl);
+    }
 
     if (req.method === 'GET') {
-      const likes = await db.get('portfolio_likes') || 0;
+      const likesStr = await redis.get('portfolio_likes');
+      const likes = likesStr ? parseInt(likesStr, 10) : 0;
       return res.status(200).json({ likes });
     } 
     else if (req.method === 'POST') {
-      // Increment the counter by 1
-      const newLikes = await db.incr('portfolio_likes');
+      const newLikes = await redis.incr('portfolio_likes');
       return res.status(200).json({ likes: newLikes });
     }
     
