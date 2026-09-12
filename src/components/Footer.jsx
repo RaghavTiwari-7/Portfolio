@@ -12,14 +12,21 @@ const Footer = () => {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            className="text-center md:text-left"
+            className="text-center md:text-left flex flex-col items-center md:items-start gap-3"
           >
-            <p className="text-white font-medium mb-1">
-              Designed & Developed by {personalInfo.name}
-            </p>
-            <p className="text-slate-500 text-sm">
-              &copy; 2026 {personalInfo.name}. All rights reserved.
-            </p>
+            <div>
+              <p className="text-white font-medium mb-1">
+                Designed & Developed by {personalInfo.name}
+              </p>
+              <p className="text-slate-500 text-sm">
+                &copy; {new Date().getFullYear()} {personalInfo.name}. All rights reserved.
+              </p>
+            </div>
+            
+            {/* Page Views Badge */}
+            <a href="https://hits.seeyoufarm.com" target="_blank" rel="noopener noreferrer" className="mt-1 hover:opacity-80 transition-opacity">
+              <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fraghavtiwari-portfolio.vercel.app&count_bg=%237C3AED&title_bg=%2311111d&icon=&icon_color=%23E7E7E7&title=Total+Views&edge_flat=true" alt="Portfolio Views" />
+            </a>
           </motion.div>
 
           <motion.div
