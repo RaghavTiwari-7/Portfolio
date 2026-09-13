@@ -9,20 +9,20 @@ const InfoLabel = ({ label, value, delay }) => (
     whileInView={{ opacity: 1, x: 0 }}
     viewport={{ once: true }}
     transition={{ duration: 0.4, delay }}
-    className="border-l-2 border-accent/30 pl-4"
+    className="border-l-2 border-accent/30 pl-4 min-w-0"
   >
     <span className="text-xs font-mono text-accent uppercase tracking-wider">{label}</span>
-    <p className="text-white font-medium mt-1">{value}</p>
+    <p className="text-white font-medium mt-1 break-words">{value}</p>
   </motion.div>
 )
 
 const About = () => {
   return (
-    <section id="about" className="relative py-24 md:py-32">
+    <section id="about" className="relative py-24 md:py-32 w-full max-w-full">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeading title="About Me" subtitle="Who I Am" />
 
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+        <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-start w-full min-w-0">
           {/* Left - Description */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -59,9 +59,9 @@ const About = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-50px" }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="relative"
+            className="relative w-full min-w-0"
           >
-            <div className="bg-dark-card border border-dark-border rounded-2xl p-8 hover:border-accent/20 transition-all duration-500">
+            <div className="bg-dark-card border border-dark-border rounded-2xl p-5 sm:p-8 hover:border-accent/20 transition-all duration-500 w-full min-w-0">
               {/* Decorative corner */}
               <div className="absolute top-0 right-0 w-20 h-20 overflow-hidden rounded-tr-2xl">
                 <div className="absolute top-0 right-0 w-32 h-32 bg-accent/5 rotate-45 transform origin-top-right" />

@@ -250,7 +250,7 @@ const CodingActivity = () => {
 
         {/* LeetCode Highlights Banner */}
         {platform === 'leetcode' && (
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4 mb-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4 mb-6">
             {/* Total Solved Card */}
             <div className="p-4 rounded-xl bg-dark-card border border-dark-border hover:border-amber-500/30 transition-colors">
               <div className="flex items-center justify-between mb-1">
@@ -265,7 +265,7 @@ const CodingActivity = () => {
               <p className="text-3xl font-bold font-mono text-white mt-1">
                 {leetcodeData.totalSolved}
               </p>
-              <div className="flex items-center gap-2 mt-2 pt-2 border-t border-dark-border/40 text-[11px] font-mono">
+              <div className="flex flex-wrap items-center gap-1.5 sm:gap-2 mt-2 pt-2 border-t border-dark-border/40 text-[11px] font-mono">
                 <span className="text-emerald-400">{leetcodeData.easySolved} Easy</span>
                 <span className="text-slate-600">•</span>
                 <span className="text-amber-400">{leetcodeData.mediumSolved} Med</span>
@@ -328,7 +328,7 @@ const CodingActivity = () => {
 
         {/* GitHub Highlights Banner */}
         {platform === 'github' && (
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4 mb-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4 mb-6">
             <div className="p-4 rounded-xl bg-dark-card border border-dark-border">
               <span className="text-slate-400 text-xs font-mono flex items-center gap-1.5">
                 <FaGithub className="text-accent" />
@@ -387,7 +387,7 @@ const CodingActivity = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="bg-dark-card border border-dark-border rounded-2xl p-4 sm:p-6 md:p-8 overflow-hidden"
+          className="bg-dark-card border border-dark-border rounded-2xl p-4 sm:p-6 md:p-8 overflow-hidden w-full max-w-full min-w-0"
         >
           {/* Card Header Status */}
           <div className="flex flex-wrap items-center justify-between gap-3 mb-6 pb-4 border-b border-dark-border/60">
@@ -414,7 +414,7 @@ const CodingActivity = () => {
                 rel="noopener noreferrer"
                 className="text-[11px] font-mono px-3 py-1 rounded-lg border border-dark-border hover:border-accent/40 bg-dark-bg/60 text-slate-400 hover:text-white transition-all flex items-center gap-1.5"
               >
-                <span>{platform === 'leetcode' ? 'leetcode.com/u/Raghavt07' : `github.com/${githubUser}`}</span>
+                <span className="truncate max-w-[150px] sm:max-w-none">{platform === 'leetcode' ? 'leetcode.com/u/Raghavt07' : `github.com/${githubUser}`}</span>
                 <FaExternalLinkAlt className="text-[9px]" />
               </a>
             </div>
@@ -431,7 +431,7 @@ const CodingActivity = () => {
           </div>
 
           {/* Heatmap Grid Wrapper */}
-          <div className="overflow-x-auto pb-2">
+          <div className="overflow-x-auto pb-2 w-full max-w-full touch-pan-x">
             <div className="min-w-[760px]">
               {/* Month labels */}
               <div className="flex ml-9 mb-2.5">

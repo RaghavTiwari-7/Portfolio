@@ -52,19 +52,19 @@ const LikeButton = () => {
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 1 }}
-      className="fixed bottom-6 right-6 z-50"
+      className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50"
     >
       <motion.button 
         onClick={handleLike}
         whileHover={{ scale: hasLiked ? 1 : 1.05 }}
         whileTap={{ scale: hasLiked ? 1 : 0.95 }}
-        className={`flex items-center gap-2 px-5 py-3 rounded-full font-semibold shadow-lg backdrop-blur-md transition-all duration-300 ${
+        className={`flex items-center gap-1.5 sm:gap-2 px-3.5 py-2 sm:px-5 sm:py-3 text-xs sm:text-sm rounded-full font-semibold shadow-lg backdrop-blur-md transition-all duration-300 ${
           hasLiked 
             ? 'bg-pink-500/20 text-pink-400 border border-pink-500/50 cursor-default' 
             : 'bg-[#11111d]/90 border border-dark-border text-slate-300 hover:text-pink-400 hover:border-pink-500/50 hover:shadow-[0_0_20px_rgba(236,72,153,0.3)]'
         }`}
       >
-        <FaHeart className={hasLiked ? 'text-pink-500' : ''} />
+        <FaHeart className={hasLiked ? 'text-pink-500 text-sm sm:text-base' : 'text-sm sm:text-base'} />
         {loading ? '...' : likes}
       </motion.button>
     </motion.div>

@@ -11,10 +11,12 @@ dist-ssr
 
 # Environment variables & credentials
 .env
+.env*
 .env.local
 .env.production
 .env.development
 backend/.env
+backend/.env*
 
 # Logs
 *.log

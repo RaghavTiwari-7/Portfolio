@@ -16,12 +16,12 @@ import LikeButton from './components/LikeButton'
 
 function App() {
   return (
-    <div className="bg-[#04040a] min-h-screen text-slate-200 font-sans selection:bg-accent/30 selection:text-accent-light relative">
+    <div className="bg-[#04040a] min-h-screen w-full max-w-full overflow-x-hidden text-slate-200 font-sans selection:bg-accent/30 selection:text-accent-light relative">
       <CursorGlow />
       <LikeButton />
       <div className="fixed inset-0 grid-bg pointer-events-none z-0" />
       <Navbar />
-      <main className="relative z-10">
+      <main className="relative z-10 w-full max-w-full overflow-x-hidden">
         <Hero />
         <About />
         <Experience />

@@ -55,62 +55,63 @@ const Contact = () => {
   }
 
   return (
-    <section id="contact" className="relative py-24 md:py-32">
+    <section id="contact" className="relative py-24 md:py-32 w-full max-w-full">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeading title="Let's build something together." subtitle="Get In Touch" />
 
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16">
+        <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 w-full min-w-0">
           {/* Left - Contact Info */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-50px" }}
             transition={{ duration: 0.6 }}
+            className="w-full min-w-0"
           >
-            <p className="text-slate-400 text-lg leading-relaxed mb-8">
+            <p className="text-slate-400 text-base sm:text-lg leading-relaxed mb-8 break-words">
               I'm always open to discussing new projects, creative ideas or opportunities to be part of your vision.
             </p>
 
-            <div className="space-y-6">
+            <div className="space-y-4 sm:space-y-6">
               <motion.a
                 href={socialLinks.email}
                 whileHover={{ x: 5 }}
-                className="flex items-center gap-4 p-4 bg-dark-card border border-dark-border rounded-xl hover:border-accent/30 transition-all duration-300 group"
+                className="flex items-center gap-3 sm:gap-4 p-3.5 sm:p-4 bg-dark-card border border-dark-border rounded-xl hover:border-accent/30 transition-all duration-300 group"
               >
-                <div className="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center group-hover:bg-accent/20 transition-colors">
-                  <FaEnvelope className="text-accent text-lg" />
+                <div className="w-10 h-10 sm:w-12 sm:h-12 bg-accent/10 rounded-lg flex items-center justify-center group-hover:bg-accent/20 transition-colors shrink-0">
+                  <FaEnvelope className="text-accent text-base sm:text-lg" />
                 </div>
-                <div>
+                <div className="min-w-0">
                   <span className="text-xs text-slate-500 font-mono uppercase tracking-wider">Email</span>
-                  <p className="text-white font-medium">{personalInfo.email}</p>
+                  <p className="text-white font-medium text-sm sm:text-base break-all">{personalInfo.email}</p>
                 </div>
               </motion.a>
 
               <motion.a
                 href={socialLinks.phone}
                 whileHover={{ x: 5 }}
-                className="flex items-center gap-4 p-4 bg-dark-card border border-dark-border rounded-xl hover:border-accent/30 transition-all duration-300 group"
+                className="flex items-center gap-3 sm:gap-4 p-3.5 sm:p-4 bg-dark-card border border-dark-border rounded-xl hover:border-accent/30 transition-all duration-300 group"
               >
-                <div className="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center group-hover:bg-accent/20 transition-colors">
-                  <FaPhone className="text-accent text-lg" />
+                <div className="w-10 h-10 sm:w-12 sm:h-12 bg-accent/10 rounded-lg flex items-center justify-center group-hover:bg-accent/20 transition-colors shrink-0">
+                  <FaPhone className="text-accent text-base sm:text-lg" />
                 </div>
-                <div>
+                <div className="min-w-0">
                   <span className="text-xs text-slate-500 font-mono uppercase tracking-wider">Phone</span>
-                  <p className="text-white font-medium">{personalInfo.phone}</p>
+                  <p className="text-white font-medium text-sm sm:text-base break-words">{personalInfo.phone}</p>
                 </div>
               </motion.a>
 
-              <div className="flex gap-4 pt-4">
+              <div className="flex flex-wrap gap-3 sm:gap-4 pt-4">
                 <motion.a
                   href={socialLinks.github}
                   target="_blank"
                   rel="noopener noreferrer"
                   whileHover={{ scale: 1.05, y: -2 }}
                   whileTap={{ scale: 0.95 }}
-                  className="flex items-center gap-3 px-5 py-3 bg-dark-card border border-dark-border rounded-xl text-slate-400 hover:text-white hover:border-accent/50 transition-all duration-300"
+                  className="flex items-center justify-center gap-2.5 px-4 sm:px-5 py-2.5 sm:py-3 bg-dark-card border border-dark-border rounded-xl text-slate-400 hover:text-white hover:border-accent/50 transition-all duration-300 text-sm font-medium flex-1 sm:flex-initial"
                 >
                   <FaGithub />
-                  <span className="text-sm font-medium">GitHub</span>
+                  <span>GitHub</span>
                 </motion.a>
                 <motion.a
                   href={socialLinks.linkedin}
@@ -118,10 +119,10 @@ const Contact = () => {
                   rel="noopener noreferrer"
                   whileHover={{ scale: 1.05, y: -2 }}
                   whileTap={{ scale: 0.95 }}
-                  className="flex items-center gap-3 px-5 py-3 bg-dark-card border border-dark-border rounded-xl text-slate-400 hover:text-white hover:border-accent/50 transition-all duration-300"
+                  className="flex items-center justify-center gap-2.5 px-4 sm:px-5 py-2.5 sm:py-3 bg-dark-card border border-dark-border rounded-xl text-slate-400 hover:text-white hover:border-accent/50 transition-all duration-300 text-sm font-medium flex-1 sm:flex-initial"
                 >
                   <FaLinkedin />
-                  <span className="text-sm font-medium">LinkedIn</span>
+                  <span>LinkedIn</span>
                 </motion.a>
               </div>
             </div>
@@ -133,8 +134,9 @@ const Contact = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-50px" }}
             transition={{ duration: 0.6, delay: 0.2 }}
+            className="w-full min-w-0"
           >
-            <form onSubmit={handleSubmit} className="bg-dark-card border border-dark-border rounded-2xl p-8">
+            <form onSubmit={handleSubmit} className="bg-dark-card border border-dark-border rounded-2xl p-5 sm:p-8 w-full min-w-0">
               <div className="space-y-6">
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium text-slate-400 mb-2">

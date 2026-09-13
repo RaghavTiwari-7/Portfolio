@@ -5,12 +5,24 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
   }
 
   body {
     font-family: 'Inter', system-ui, sans-serif;
     background-color: #050508;
     color: #e2e8f0;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+    position: relative;
+  }
+
+  #root {
+    width: 100%;
+    max-width: 100%;
     overflow-x: hidden;
   }
 

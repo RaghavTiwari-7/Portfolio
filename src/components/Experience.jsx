@@ -10,7 +10,7 @@ const Experience = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeading title="Experience" subtitle="Where I've Worked" />
 
-        <div className="relative max-w-4xl mx-auto">
+        <div className="relative max-w-4xl mx-auto w-full min-w-0">
           {/* Timeline line - desktop */}
           <motion.div
             initial={{ height: 0 }}

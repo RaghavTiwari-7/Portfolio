@@ -38,11 +38,11 @@ const Skills = () => {
   ]
 
   return (
-    <section id="skills" className="relative py-24 md:py-32">
+    <section id="skills" className="relative py-24 md:py-32 w-full max-w-full">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeading title="Skills" subtitle="Tech Stack" />
 
-        <div className="grid md:grid-cols-2 gap-x-12 gap-y-4">
+        <div className="grid md:grid-cols-2 gap-x-12 gap-y-4 w-full min-w-0">
           {categories.map((category, index) => (
             <SkillCategory
               key={category.title}

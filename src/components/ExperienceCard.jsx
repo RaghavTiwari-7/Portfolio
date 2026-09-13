@@ -8,14 +8,17 @@ const ExperienceCard = ({ exp, index, isLeft }) => {
       whileInView={{ opacity: 1, x: 0 }}
       viewport={{ once: true, margin: "-50px" }}
       transition={{ duration: 0.6, delay: index * 0.15 }}
-      className={`relative ${isLeft ? 'md:text-right md:pr-12' : 'md:text-left md:pl-12'} mb-8 md:mb-0`}
+      className={`relative pl-8 md:pl-0 ${isLeft ? 'md:text-right md:pr-12' : 'md:text-left md:pl-12'} mb-8 md:mb-0 w-full min-w-0`}
     >
-      {/* Timeline dot */}
+      {/* Desktop Timeline dot */}
       <div className="hidden md:block absolute top-0 w-4 h-4 rounded-full bg-accent border-4 border-dark-bg shadow-[0_0_10px_rgba(124,58,237,0.5)] z-10"
         style={{ [isLeft ? 'right' : 'left']: '-8px' }}
       />
 
-      <div className="bg-dark-card border border-dark-border rounded-xl p-6 hover:border-accent/30 transition-all duration-300 hover:shadow-[0_0_20px_rgba(124,58,237,0.1)]">
+      {/* Mobile Timeline dot */}
+      <div className="md:hidden absolute top-6 left-4 w-3.5 h-3.5 rounded-full bg-accent border-2 border-dark-bg shadow-[0_0_8px_rgba(124,58,237,0.5)] z-10 -translate-x-1/2" />
+
+      <div className="bg-dark-card border border-dark-border rounded-xl p-5 sm:p-6 hover:border-accent/30 transition-all duration-300 hover:shadow-[0_0_20px_rgba(124,58,237,0.1)]">
         <span className="text-accent text-xs font-mono font-medium tracking-wider">
           {exp.duration}
         </span>

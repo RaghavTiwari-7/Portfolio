@@ -146,9 +146,9 @@ const Navbar = () => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.3 }}
-            className="fixed inset-x-0 top-16 z-40 bg-dark-bg/95 backdrop-blur-xl border-b border-dark-border lg:hidden"
+            className="fixed inset-x-0 top-16 z-40 bg-dark-bg/95 backdrop-blur-xl border-b border-dark-border lg:hidden max-h-[calc(100dvh-4rem)] overflow-y-auto shadow-2xl"
           >
-            <div className="px-4 py-6 space-y-1">
+            <div className="px-4 py-4 sm:py-6 space-y-1 pb-8">
               {navLinks.map((link, i) => (
                 <motion.button
                   key={link.id}

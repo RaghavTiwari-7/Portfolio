@@ -224,7 +224,7 @@ const TerminalWindow = ({ scrollTo }) => {
       initial={{ opacity: 0, y: 30 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, delay: 0.5 }}
-      className="relative w-full max-w-lg lg:max-w-xl mx-auto"
+      className="relative w-full max-w-full sm:max-w-lg lg:max-w-xl mx-auto min-w-0"
     >
      
 
@@ -232,60 +232,60 @@ const TerminalWindow = ({ scrollTo }) => {
       <motion.div
         animate={{ y: [0, 8, 0] }}
         transition={{ repeat: Infinity, duration: 4.5, ease: "easeInOut", delay: 1 }}
-        className="absolute -bottom-4 -left-2 sm:-left-4 z-20 flex items-center gap-2 px-3 py-1.5 rounded-full bg-dark-card/90 border border-emerald-500/40 shadow-[0_4px_20px_rgba(16,185,129,0.2)] backdrop-blur-md text-xs font-medium text-slate-200"
+        className="absolute -bottom-4 left-2 sm:-left-4 z-20 flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-full bg-dark-card/90 border border-emerald-500/40 shadow-[0_4px_20px_rgba(16,185,129,0.2)] backdrop-blur-md text-xs font-medium text-slate-200"
       >
         <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
         <FaBolt className="text-amber-400 text-xs" />
-        <span className="font-mono text-[11px]">Open to Roles</span>
+        <span className="font-mono text-[10px] sm:text-[11px]">Open to Roles</span>
       </motion.div>
 
       {/* Main Glass Card */}
-      <div className="relative rounded-2xl bg-[#090910]/95 border border-dark-border/80 shadow-[0_0_50px_rgba(124,58,237,0.14)] backdrop-blur-xl overflow-hidden group hover:border-accent/40 transition-all duration-500">
+      <div className="relative rounded-2xl bg-[#090910]/95 border border-dark-border/80 shadow-[0_0_50px_rgba(124,58,237,0.14)] backdrop-blur-xl overflow-hidden group hover:border-accent/40 transition-all duration-500 w-full min-w-0">
         
         {/* Terminal Header */}
-        <div className="bg-[#11111d] px-4 py-3 border-b border-dark-border/60 flex items-center justify-between">
+        <div className="bg-[#11111d] px-3 sm:px-4 py-2.5 sm:py-3 border-b border-dark-border/60 flex items-center justify-between gap-2 overflow-x-auto">
           {/* Window Control Buttons */}
-          <div className="flex items-center gap-2">
-            <div className="w-3 h-3 rounded-full bg-[#ff5f56] hover:opacity-80 transition-opacity" />
-            <div className="w-3 h-3 rounded-full bg-[#ffbd2e] hover:opacity-80 transition-opacity" />
-            <div className="w-3 h-3 rounded-full bg-[#27c93f] hover:opacity-80 transition-opacity" />
+          <div className="flex items-center gap-1.5 sm:gap-2 shrink-0">
+            <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-[#ff5f56] hover:opacity-80 transition-opacity" />
+            <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-[#ffbd2e] hover:opacity-80 transition-opacity" />
+            <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-[#27c93f] hover:opacity-80 transition-opacity" />
           </div>
 
           {/* Center Tabs */}
-          <div className="flex items-center gap-1 bg-dark-bg/60 p-1 rounded-lg border border-dark-border/40">
+          <div className="flex items-center gap-0.5 sm:gap-1 bg-dark-bg/60 p-0.5 sm:p-1 rounded-lg border border-dark-border/40 shrink-0">
             <button
               onClick={() => setActiveTab('terminal')}
-              className={`flex items-center gap-1.5 px-3 py-1 rounded-md text-xs font-mono font-medium transition-all ${
+              className={`flex items-center gap-1 sm:gap-1.5 px-2 sm:px-3 py-1 rounded-md text-[11px] sm:text-xs font-mono font-medium transition-all ${
                 activeTab === 'terminal'
                   ? 'bg-accent/20 text-accent-light border border-accent/40 shadow-sm'
                   : 'text-slate-400 hover:text-white'
               }`}
             >
-              <FaTerminal className="text-[10px]" />
+              <FaTerminal className="text-[9px] sm:text-[10px]" />
               <span>terminal</span>
             </button>
 
             <button
               onClick={() => setActiveTab('code')}
-              className={`flex items-center gap-1.5 px-3 py-1 rounded-md text-xs font-mono font-medium transition-all ${
+              className={`flex items-center gap-1 sm:gap-1.5 px-2 sm:px-3 py-1 rounded-md text-[11px] sm:text-xs font-mono font-medium transition-all ${
                 activeTab === 'code'
                   ? 'bg-accent/20 text-accent-light border border-accent/40 shadow-sm'
                   : 'text-slate-400 hover:text-white'
               }`}
             >
-              <FaCode className="text-[11px]" />
+              <FaCode className="text-[10px] sm:text-[11px]" />
               <span>raghav.ts</span>
             </button>
 
             <button
               onClick={() => setActiveTab('status')}
-              className={`flex items-center gap-1.5 px-3 py-1 rounded-md text-xs font-mono font-medium transition-all ${
+              className={`flex items-center gap-1 sm:gap-1.5 px-2 sm:px-3 py-1 rounded-md text-[11px] sm:text-xs font-mono font-medium transition-all ${
                 activeTab === 'status'
                   ? 'bg-accent/20 text-accent-light border border-accent/40 shadow-sm'
                   : 'text-slate-400 hover:text-white'
               }`}
             >
-              <FaBolt className="text-[10px]" />
+              <FaBolt className="text-[9px] sm:text-[10px]" />
               <span>status</span>
             </button>
           </div>
@@ -311,7 +311,7 @@ const TerminalWindow = ({ scrollTo }) => {
         </div>
 
         {/* Card Body */}
-        <div className="p-5 sm:p-6 min-h-[300px]">
+        <div className="p-3.5 sm:p-6 min-h-[280px] sm:min-h-[300px]">
           
           {/* TAB 1: INTERACTIVE TERMINAL */}
           {activeTab === 'terminal' && (
@@ -483,23 +483,23 @@ const Hero = () => {
   }
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center overflow-hidden">
+    <section id="home" className="relative min-h-screen flex items-center overflow-hidden w-full max-w-full">
       <ParticleCanvas />
 
       {/* Background glow */}
       <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-accent/5 rounded-full blur-[120px] pointer-events-none" />
       <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-accent/5 rounded-full blur-[120px] pointer-events-none" />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 w-full">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-16 sm:py-24 lg:py-32 w-full">
+        <div className="grid lg:grid-cols-2 gap-10 lg:gap-12 items-center w-full min-w-0">
           {/* Left Content */}
-          <div>
+          <div className="w-full min-w-0">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
             >
-              <span className="text-accent text-sm font-mono font-medium tracking-wider">
+              <span className="text-accent text-xs sm:text-sm font-mono font-medium tracking-wider">
                 Hi, I'm
               </span>
             </motion.div>
@@ -508,7 +508,7 @@ const Hero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.1 }}
-              className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mt-2 mb-4"
+              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mt-2 mb-4 tracking-tight break-words"
             >
               {personalInfo.name}
             </motion.h1>
@@ -526,7 +526,7 @@ const Hero = () => {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -10 }}
                   transition={{ duration: 0.4 }}
-                  className="text-xl md:text-2xl font-medium text-accent-light inline-block"
+                  className="text-lg sm:text-xl md:text-2xl font-medium text-accent-light inline-block"
                 >
                   {personalInfo.roles[roleIndex]}
                 </motion.span>
@@ -537,7 +537,7 @@ const Hero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.3 }}
-              className="text-slate-400 text-lg leading-relaxed max-w-xl mb-8"
+              className="text-slate-400 text-base sm:text-lg leading-relaxed max-w-xl mb-8 break-words"
             >
               {personalInfo.tagline}
             </motion.p>
@@ -546,53 +546,53 @@ const Hero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.4 }}
-              className="flex flex-col sm:flex-row flex-wrap gap-4 mb-8"
+              className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4 mb-8"
             >
               <motion.button
                 onClick={() => scrollTo('projects')}
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                className="w-full sm:w-auto px-6 py-3 bg-accent text-white font-medium rounded-lg hover:bg-accent-light transition-colors duration-300 shadow-[0_0_20px_rgba(124,58,237,0.3)] text-center"
+                className="w-full sm:w-auto px-6 py-3 bg-accent text-white font-medium rounded-lg hover:bg-accent-light transition-colors duration-300 shadow-[0_0_20px_rgba(124,58,237,0.3)] text-center text-sm sm:text-base"
               >
                 View My Work
               </motion.button>
-              <motion.a
-                href="#"
+              <motion.button
+                onClick={() => scrollTo('resume')}
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                className="w-full sm:w-auto px-6 py-3 bg-dark-card border border-dark-border text-slate-300 font-medium rounded-lg hover:border-accent/50 hover:text-white transition-all duration-300 text-center"
+                className="w-full sm:w-auto px-6 py-3 bg-dark-card border border-dark-border text-slate-300 font-medium rounded-lg hover:border-accent/50 hover:text-white transition-all duration-300 text-center text-sm sm:text-base"
               >
                 Download Resume
-              </motion.a>
+              </motion.button>
             </motion.div>
 
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.5 }}
-              className="flex flex-wrap items-center gap-4 sm:gap-4"
+              className="flex flex-wrap items-center gap-3 sm:gap-4"
             >
-              <div className="flex items-center gap-4">
+              <div className="flex items-center gap-3.5 sm:gap-4">
                 <a href={socialLinks.github} target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-accent transition-colors duration-300" title="GitHub">
-                  <FaGithub size={22} />
+                  <FaGithub size={20} className="sm:w-[22px] sm:h-[22px]" />
                 </a>
                 <a href={socialLinks.linkedin} target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-accent transition-colors duration-300" title="LinkedIn">
-                  <FaLinkedin size={22} />
+                  <FaLinkedin size={20} className="sm:w-[22px] sm:h-[22px]" />
                 </a>
                 <a href={socialLinks.leetcode} target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-amber-400 transition-colors duration-300" title="LeetCode">
-                  <SiLeetcode size={20} />
+                  <SiLeetcode size={19} className="sm:w-[20px] sm:h-[20px]" />
                 </a>
                 <a href={socialLinks.email} className="text-slate-400 hover:text-accent transition-colors duration-300" title="Email">
-                  <FaEnvelope size={22} />
+                  <FaEnvelope size={20} className="sm:w-[22px] sm:h-[22px]" />
                 </a>
               </div>
               <span className="hidden sm:block text-slate-600">|</span>
-              <span className="text-slate-500 text-sm font-mono truncate w-full sm:w-auto">{personalInfo.email}</span>
+              <a href={socialLinks.email} className="text-slate-500 hover:text-accent text-xs sm:text-sm font-mono break-all transition-colors">{personalInfo.email}</a>
             </motion.div>
           </div>
 
           {/* Right Content - Terminal */}
-          <div className="flex justify-center lg:justify-end">
+          <div className="flex justify-center lg:justify-end w-full min-w-0">
             <TerminalWindow scrollTo={scrollTo} />
           </div>
         </div>
@@ -603,7 +603,7 @@ const Hero = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.5 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2"
+        className="hidden md:block absolute bottom-8 left-1/2 -translate-x-1/2"
       >
         <motion.button
           onClick={() => scrollTo('about')}

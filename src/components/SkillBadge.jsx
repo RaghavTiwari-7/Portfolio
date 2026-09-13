@@ -63,10 +63,10 @@ const SkillBadge = ({ name, icon, index = 0 }) => {
         y: -2,
         boxShadow: '0 0 20px rgba(124, 58, 237, 0.3)',
       }}
-      className="group flex items-center gap-2 px-4 py-2.5 bg-dark-card border border-dark-border rounded-lg cursor-default transition-colors duration-300 hover:border-accent/50"
+      className="group flex items-center gap-2 px-3 sm:px-4 py-2 sm:py-2.5 bg-dark-card border border-dark-border rounded-lg cursor-default transition-colors duration-300 hover:border-accent/50"
     >
-      <Icon className="text-slate-400 group-hover:text-accent transition-colors duration-300 text-sm" />
-      <span className="text-sm font-medium text-slate-300 group-hover:text-white transition-colors duration-300">
+      <Icon className="text-slate-400 group-hover:text-accent transition-colors duration-300 text-xs sm:text-sm" />
+      <span className="text-xs sm:text-sm font-medium text-slate-300 group-hover:text-white transition-colors duration-300">
         {name}
       </span>
     </motion.div>
